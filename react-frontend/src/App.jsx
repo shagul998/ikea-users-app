@@ -41,7 +41,6 @@ function App() {
 
   const createUser = async (e) => {
     e.preventDefault()
-    console.log(e.target.name.value, e.target.isAdmin.value)
     const response = await fetch(`${hostUrl}api/users`, {
       method: "POST",
       headers: {
