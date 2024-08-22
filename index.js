@@ -32,7 +32,7 @@ const users = [
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("react-app/dist"));
+app.use(express.static("react-frontend/dist"));
 
 app.get("/", (req, res) => {
   res.json({ data: "Hello Ikea!" });
@@ -62,9 +62,7 @@ app.put("/api/users/:id", async (req, res) => {
     const { name, isAdmin } = req.body;
 
     const user = await User.findByPk(req.params.id);
-    // jane.favoriteColor = 'blue';
     await user.update({ name, isAdmin });
-    // The database now has "Ada" for name, but still has the default "green" for favorite color
     await user.save();
     res.json(user);
 });
