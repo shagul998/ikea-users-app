@@ -59,19 +59,20 @@ app.post("/api/users", async (req, res) => {
 });
 
 app.put("/api/users/:id", async (req, res) => {
-    const { name, isAdmin } = request.body;
+    const { name, isAdmin } = req.body;
 
     const user = await User.findByPk(req.params.id);
     // jane.favoriteColor = 'blue';
     await user.update({ name, isAdmin });
     // The database now has "Ada" for name, but still has the default "green" for favorite color
     await user.save();
+    res.json(user);
 });
 
 app.delete('/api/users/:id', async (req, res) => {
     const user = await User.findByPk(req.params.id);
     await user.destroy();
-    res.json({data: `The user with id of ${req.params.id} is removed.`});
+    res.send(`The user is removed.`).status(204)
 });
 
 const port = process.env.PORT || 8080;
