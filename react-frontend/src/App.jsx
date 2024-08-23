@@ -46,7 +46,7 @@ function App() {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ name: e.target.name.value, isAdmin: e.target.isAdmin.value  }),
+      body: JSON.stringify({ name: e.target.name.value, isAdmin: e.target.isAdmin.checked  }),
     });
     const newUser = await response.json();
 
