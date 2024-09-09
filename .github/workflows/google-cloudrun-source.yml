@@ -34,9 +34,9 @@ on:
     branches: ['main']
 
 env:
-  PROJECT_ID: 'ikea-practice-08222024' # TODO: update to your Google Cloud project ID
-  REGION: 'us-central1' # TODO: update to your region
-  SERVICE: 'ikea-users-app' # TODO: update to your service name
+  PROJECT_ID: 'student-001005' # TODO: update to your Google Cloud project ID
+  REGION: 'europe-central2' # TODO: update to your region
+  SERVICE: 'gcp-test-9924' # TODO: update to your service name
 
 jobs:
   deploy:
